@@ -1,0 +1,16 @@
+RewriteEngine on
+
+ErrorDocument 404 http://localhost/firma/404.php
+
+RewriteRule ^hakkimizda$ hakkimizda.php [NC,L]
+RewriteRule ^arama$ arama.php [NC,L]
+RewriteRule ^bizeulasin$ iletisim.php [NC,L]
+RewriteRule ^haberler$ haberler.php [NC,L]
+RewriteRule ^sitemap.xml$ sitemap.php [NC,L]
+
+RewriteRule ^haber-([0-9a-zA-Z-_]+)-([0-9]+)$ haberler-detay.php?sef=$1&icerik_id=$2[L,QSA]
+RewriteRule ^sayfa-([0-9a-zA-Z-_]+)-([0-9]+)$ menu-detay.php?sef=$1&menu_id=$2[L,QSA]
+
+
+#RewriteRule ^kategoriler/([0-9a-zA-Z-_]+) kategoriler.php?sef=$1 [L,QSA]
+#RewriteRule ^urun-detay/([0-9a-zA-Z-_]+)-([0-9]+)$ urun-detay.php?sef=$1&haber_id=$2[L,QSA]
